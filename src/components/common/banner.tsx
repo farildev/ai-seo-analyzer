@@ -1,7 +1,7 @@
 import React from 'react';
 import { Ripple } from '../ui/ripple';
 import { Button } from '../ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 
 const Banner = () => {
@@ -31,9 +31,12 @@ const Banner = () => {
               Join with Google
             </Button>
             <Button className="bg-main hover:bg-main-hover cursor-pointer">
-              Start for free <ArrowRight />
+              Get Started for free <ArrowRight />
             </Button>
           </div>
+          <button className="flex items-center justify-center p-4 rounded-full bg-white hover:bg-gray-100 border border-gray-200 mt-10 cursor-pointer">
+            <ChevronDown />
+          </button>
         </div>
       </div>
     </div>
