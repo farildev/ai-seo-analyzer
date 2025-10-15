@@ -1,3 +1,4 @@
+'use client';
 import {
   Carousel,
   CarouselContent,
@@ -6,11 +7,22 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { supporters } from '@/mocks/supporters';
+import Autoplay from 'embla-carousel-autoplay';
 import Image from 'next/image';
 const SupportersCarousel = () => {
   return (
     <div className="mt-10">
-      <Carousel>
+      <Carousel
+        opts={{
+          loop: true,
+        }}
+        plugins={[
+          Autoplay({
+            delay: 2000,
+            stopOnInteraction: true,
+          }),
+        ]}
+      >
         <CarouselContent>
           {supporters.map((supporter) => (
             <CarouselItem
