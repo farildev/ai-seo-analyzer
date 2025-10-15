@@ -1,4 +1,7 @@
 import Banner from '@/components/common/banner';
+import FaqSection from '@/components/common/faq-section';
+import OfferCard from '@/components/common/offer-card';
+import SolutionsSection from '@/components/common/solutions-section';
 import SupportersSection from '@/components/common/supporters-section';
 
 export default function Home() {
@@ -6,6 +9,9 @@ export default function Home() {
     <div>
       <Banner />
       <SupportersSection />
+      <SolutionsSection />
+      <FaqSection />
+      <OfferCard />
     </div>
   );
 }
