@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const OfferCard = () => {
   return (
-    <div className="pt-20">
+    <div className="py-20">
       <div className="siteContainer">
         <div className="w-full p-16 rounded-[24px] bg-gradient-to-r from-[#16A34A] via-[#6DDE97] to-white grid grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
