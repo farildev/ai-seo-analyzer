@@ -11,7 +11,7 @@ const FaqSection = () => {
     <section className="pt-20">
       <div className="siteContainer">
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-4xl w-full font-semibold text-center">
+          <h2 className="md:text-4xl text-3xl w-full font-semibold text-center">
             Frequently Asked Questions
           </h2>
           <p className="text-sm font-normal text-gray-400 mt-3">
@@ -22,26 +22,26 @@ const FaqSection = () => {
         <div className="py-10">
           <Accordion type="single" className="flex flex-col gap-3" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger className="bg-white rounded-lg cursor-pointer p-4 border border-custom-border font-semibold text-2xl">
+              <AccordionTrigger className="bg-white rounded-lg cursor-pointer p-4 border border-custom-border font-semibold md:text-2xl text-xl">
                 Is it accessible?
               </AccordionTrigger>
-              <AccordionContent className="p-4 rounded-lg text-lg font-medium">
+              <AccordionContent className="p-4 rounded-lg md:text-lg text-md font-medium">
                 Yes. It adheres to the WAI-ARIA design pattern.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="bg-white rounded-lg cursor-pointer p-4 border border-custom-border font-semibold text-2xl">
+              <AccordionTrigger className="bg-white rounded-lg cursor-pointer p-4 border border-custom-border font-semibold md:text-2xl text-xl">
                 Is it accessible?
               </AccordionTrigger>
-              <AccordionContent className="p-4 rounded-lg text-lg font-medium">
+              <AccordionContent className="p-4 rounded-lg md:text-lg text-md font-medium">
                 Yes. It adheres to the WAI-ARIA design pattern.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="bg-white rounded-lg cursor-pointer p-4 border border-custom-border font-semibold text-2xl">
+              <AccordionTrigger className="bg-white rounded-lg cursor-pointer p-4 border border-custom-border font-semibold md:text-2xl text-xl">
                 Is it accessible?
               </AccordionTrigger>
-              <AccordionContent className="p-4 rounded-lg text-lg font-medium">
+              <AccordionContent className="p-4 rounded-lg md:text-lg text-md font-medium">
                 Yes. It adheres to the WAI-ARIA design pattern.
               </AccordionContent>
             </AccordionItem>

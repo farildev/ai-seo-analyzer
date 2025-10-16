@@ -7,7 +7,7 @@ const SolutionsSection = () => {
     <div className="pt-20">
       <div className="siteContainer">
         <div className="flex flex-col items-center justify-center">
-          <h2 className="text-4xl max-w-[474px] w-full font-semibold text-center">
+          <h2 className="md:text-4xl text-3xl max-w-[474px] w-full font-semibold text-center">
             Our Solutions for your problems
           </h2>
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 mt-16">
