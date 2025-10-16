@@ -1,4 +1,5 @@
 import Banner from '@/components/common/banner';
+import DifferentSidesSection from '@/components/common/different-sides-section';
 import FaqSection from '@/components/common/faq-section';
 import OfferCard from '@/components/common/offer-card';
 import SolutionsSection from '@/components/common/solutions-section';
@@ -10,6 +11,7 @@ export default function Home() {
       <Banner />
       <SupportersSection />
       <SolutionsSection />
+      <DifferentSidesSection />
       <FaqSection />
       <OfferCard />
     </div>
