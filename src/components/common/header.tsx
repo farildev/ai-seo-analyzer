@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="py-10 bg-transparent fixed top-0 left-0 right-0">
+    <header className="py-10 bg-transparent fixed top-0 left-0 right-0 z-50">
       <div className="siteContainer">
         <nav className="flex items-center justify-between">
           <Link className="text-2xl font-semibold text-main" href={'/'}>
