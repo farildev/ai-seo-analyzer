@@ -4,8 +4,10 @@ import DifferentSidesSection from '@/components/common/different-sides-section';
 import FaqSection from '@/components/common/faq-section';
 import HowItWorks from '@/components/common/how-it-works';
 import OfferCard from '@/components/common/offer-card';
+import PricingSection from '@/components/common/pricing-section';
 import SolutionsSection from '@/components/common/solutions-section';
 import SupportersSection from '@/components/common/supporters-section';
+import TestimonialsSection from '@/components/common/testimonials-section';
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <HowItWorks />
       <BacklinkExcangeSection />
       <DifferentSidesSection />
+      <TestimonialsSection />
+      <PricingSection />
       <FaqSection />
       <OfferCard />
     </div>
