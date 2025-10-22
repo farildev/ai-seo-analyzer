@@ -8,6 +8,7 @@ import PricingSection from '@/components/common/pricing-section';
 import SolutionsSection from '@/components/common/solutions-section';
 import SupportersSection from '@/components/common/supporters-section';
 import TestimonialsSection from '@/components/common/testimonials-section';
+import WritingExamples from '@/components/common/writing-examples';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <SupportersSection />
       <SolutionsSection />
       <HowItWorks />
+      <WritingExamples />
       <BacklinkExcangeSection />
       <DifferentSidesSection />
       <TestimonialsSection />
