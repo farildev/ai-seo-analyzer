@@ -1,8 +1,11 @@
+'use client';
+
 import React from 'react';
 import { Ripple } from '../ui/ripple';
 import { Button } from '../ui/button';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
+import { TextAnimate } from '../ui/text-animate';
 
 const Banner = () => {
   return (
@@ -12,14 +15,28 @@ const Banner = () => {
         <div className="flex flex-col items-center justify-center">
           <div className="max-w-[832px]">
             <h1 className="md:text-6xl sm:text-5xl text-4xl w-full text-center font-bold">
-              <span className="text-main">AI Supported</span> Organic Traffic
-              Analyzer
+              <span className="text-main">
+                <TextAnimate animation="slideUp" by="word">
+                  AI Supported
+                </TextAnimate>
+              </span>{' '}
+              <TextAnimate animation="slideUp" by="word">
+                Organic Traffic Analyzer
+              </TextAnimate>
             </h1>
           </div>
-          <p className="max-w-[490px] mt-6 text-gray-500 text-center md:text-md text-sm">
-            Get recommended by ChatGPT & Rank on Google, all through Blog Posts,
-            Backlinks, and Free Tools built for you, while you sleep.
-          </p>
+
+          <div className="max-w-[490px] mt-6">
+            <TextAnimate
+              animation="slideUp"
+              by="word"
+              className="text-gray-500 text-center md:text-md text-sm"
+            >
+              Get recommended by ChatGPT & Rank on Google, all through Blog
+              Posts, Backlinks, and Free Tools built for you, while you sleep.
+            </TextAnimate>
+          </div>
+
           <div className="flex items-center gap-4 mt-6">
             <Button className="bg-gray-50 border border-gray-100 hover:bg-gray-100 shadow-none text-black cursor-pointer">
               <Image
