@@ -27,7 +27,7 @@ const SupportersCarousel = () => {
           {supporters.map((supporter) => (
             <CarouselItem
               key={supporter.id}
-              className="basis-1/5 flex items-center justify-center"
+              className="lg:basis-1/5 md:basis-1/4 sm:basis-1/3 flex mx-4 items-center justify-center"
             >
               <Image
                 src={supporter.logo}

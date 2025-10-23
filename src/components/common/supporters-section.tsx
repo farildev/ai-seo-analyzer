@@ -5,7 +5,9 @@ const SupportersSection = () => {
   return (
     <section className="py-20">
       <div className="siteContainer">
-        <h2 className="text-4xl font-semibold text-center">Our Supporters</h2>
+        <h2 className="md:text-4xl text-3xl font-semibold text-center">
+          Our Supporters
+        </h2>
         <SupportersCarousel />
       </div>
     </section>
