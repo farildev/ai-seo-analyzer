@@ -44,15 +44,15 @@ const Footer = () => {
                 </Link>
               </div>
               <div className="flex flex-col gap-3">
-                <h5 className="text-xl font-semibold text-white">Contact us</h5>
-                <Link className="text-white text-md" href={'/'}>
-                  Create SEO Analysis
+                <h5 className="text-xl font-semibold text-white">Additional</h5>
+                <Link className="text-white text-md" href={'/privacy-policy'}>
+                  Privacy & Policy
+                </Link>
+                <Link className="text-white text-md" href={'/terms-conditions'}>
+                  Terms & Conditions
                 </Link>
                 <Link className="text-white text-md" href={'/'}>
-                  App Backlinks
-                </Link>
-                <Link className="text-white text-md" href={'/'}>
-                  Blog keyword generator
+                  Support
                 </Link>
               </div>
             </div>
