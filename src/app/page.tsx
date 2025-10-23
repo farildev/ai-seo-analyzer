@@ -2,6 +2,7 @@ import BacklinkExcangeSection from '@/components/common/backlink-exchange';
 import Banner from '@/components/common/banner';
 import DifferentSidesSection from '@/components/common/different-sides-section';
 import FaqSection from '@/components/common/faq-section';
+import FeaturesSection from '@/components/common/features-section';
 import HowItWorks from '@/components/common/how-it-works';
 import OfferCard from '@/components/common/offer-card';
 import PricingSection from '@/components/common/pricing-section';
@@ -17,6 +18,7 @@ export default function Home() {
       <SupportersSection />
       <SolutionsSection />
       <HowItWorks />
+      <FeaturesSection />
       <WritingExamples />
       <BacklinkExcangeSection />
       <DifferentSidesSection />
