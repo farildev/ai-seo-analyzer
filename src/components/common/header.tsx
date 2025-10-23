@@ -1,12 +1,37 @@
+'use client';
 import Link from 'next/link';
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 import { ArrowRight, Menu } from 'lucide-react';
 import Image from 'next/image';
 
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="py-10 bg-transparent fixed top-0 left-0 right-0 z-50">
+    <header
+      className={`py-4 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white border-b border-b-custom-border'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="siteContainer">
         <nav className="flex items-center justify-between">
           <Link className="text-2xl font-semibold text-main" href={'/'}>
@@ -33,9 +58,9 @@ const Header = () => {
             </Link>
             <Link
               className="text-md font-medium hover:bg-gray-100 py-2 px-3 rounded-md transition-colors duration-300"
-              href={'/'}
+              href={'/blogs'}
             >
-              Blog
+              Blogs
             </Link>
           </ul>
           <div className="flex items-center gap-4">
