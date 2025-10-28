@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 import { ArrowRight, Menu } from 'lucide-react';
 import Image from 'next/image';
+import useSidebar from '@/store/useSidebarStore';
 
 const Header = () => {
+  const openSidebar = useSidebar((state) => state.openSidebar);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -76,7 +78,10 @@ const Header = () => {
             <Button className="bg-main md:flex items-center gap-2 hidden hover:bg-main-hover cursor-pointer">
               Start for free <ArrowRight />
             </Button>
-            <Button className="lg:hidden block bg-gray-100 border border-gray-200 cursor-pointer text-black hover:bg-gray-200 shadow-none">
+            <Button
+              onClick={openSidebar}
+              className="lg:hidden block bg-gray-100 border border-gray-200 cursor-pointer text-black hover:bg-gray-200 shadow-none"
+            >
               <Menu />
             </Button>
           </div>
