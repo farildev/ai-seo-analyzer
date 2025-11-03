@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import {
   Select,
   SelectContent,
@@ -9,7 +9,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { useOnboardingStore } from '@/store/useOnboardingStore';
+
 const Stepper5 = () => {
+  const canGoNext = useOnboardingStore((state) => state.canGoNext);
+  const prevStep = useOnboardingStore((state) => state.prevStep);
+  const nextStep = useOnboardingStore((state) => state.nextStep);
   return (
     <div className="max-w-xl w-full mx-auto flex flex-col justify-center items-center gap-5">
       <div className="mt-10 w-full">
@@ -45,9 +50,21 @@ const Stepper5 = () => {
             </Select>
           </div>
         </div>
-        <Button className="flex items-center gap-1 bg-main hover:bg-main-hover text-white font-semibold h-12 mt-10 w-full">
-          <ArrowRight /> Next Step
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button
+            disabled={!canGoNext}
+            onClick={prevStep}
+            className="flex items-center gap-1 bg-gray-100 hover:bg-gray-200 border border-custom-border text-black font-semibold h-12 mt-5 flex-1"
+          >
+            <ArrowLeft /> Previous step
+          </Button>
+          <Button
+            onClick={nextStep}
+            className="flex items-center gap-1 bg-main hover:bg-main-hover flex-1 text-white font-semibold h-12 mt-5"
+          >
+            Next Step <ArrowRight />
+          </Button>
+        </div>
       </div>
     </div>
   );

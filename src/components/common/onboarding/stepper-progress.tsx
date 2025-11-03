@@ -1,14 +1,12 @@
 'use client';
-
 import * as React from 'react';
+import { useOnboardingStore } from '@/store/useOnboardingStore';
 import { Progress } from '@/components/ui/progress';
 export function StepperProgess() {
-  const [progress, setProgress] = React.useState(13);
+  const currentStep = useOnboardingStore((state) => state.currentStep);
+  const totalSteps = useOnboardingStore((state) => state.totalSteps);
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500);
-    return () => clearTimeout(timer);
-  }, []);
+  const totalProgress = (currentStep / totalSteps) * 100;
 
-  return <Progress value={progress} className="w-auto" />;
+  return <Progress value={totalProgress} className="w-auto" />;
 }

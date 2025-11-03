@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,10 +7,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { Plus, Save, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import FolderImage from '@/assets/images/folder.png';
+import { useOnboardingStore } from '@/store/useOnboardingStore';
 const Stepper1 = () => {
+  const nextStep = useOnboardingStore((state) => state.nextStep);
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
-      <div className="mt-10 overflow-y-auto size-full flex-1 overflow-x-hidden">
+      <div className="mt-10">
         <h2 className="lg:text-4xl md:text-3xl text-2xl font-semibold">
           Step 1 - Add information about your business
         </h2>
@@ -53,7 +56,10 @@ const Stepper1 = () => {
             </div>
           </div>
         </div>
-        <Button className="flex items-center gap-1 bg-main hover:bg-main-hover text-white font-semibold h-12 mt-10 w-full">
+        <Button
+          onClick={nextStep}
+          className="flex items-center gap-1 bg-main hover:bg-main-hover text-white font-semibold h-12 mt-10 w-full"
+        >
           <Save /> Save information
         </Button>
       </div>
