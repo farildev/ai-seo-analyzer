@@ -10,7 +10,7 @@ import { useOnboardingStore } from '@/store/useOnboardingStore';
 const Onboarding = () => {
   const currentStep = useOnboardingStore((state) => state.currentStep);
   return (
-    <div className="w-full h-screen flex flex-col items-center py-5">
+    <div className="w-full h-screen flex flex-col items-center py-10">
       <div className="siteContainer">
         <StepperProgess />
         <div className="w-full flex-1">
