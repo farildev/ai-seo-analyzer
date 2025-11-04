@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { useForm, useFieldArray } from 'react-hook-form';
+import { useForm, useFieldArray, type FieldArrayPath } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Save, Sparkles, Plus, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -17,15 +17,7 @@ const Stepper1 = () => {
   const { data, updateStep1, nextStep } = useOnboardingStore();
   const [isAutoFilling, setIsAutoFilling] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-
-    watch,
-    control,
-    formState: { errors, isValid },
-  } = useForm<Step1FormData>({
+  const form = useForm<Step1FormData>({
     resolver: zodResolver(step1Schema),
     mode: 'onChange',
     defaultValues: {
@@ -38,9 +30,18 @@ const Stepper1 = () => {
     },
   });
 
-  const { fields, append, remove } = useFieldArray<Step1FormData>({
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
     control,
-    name: 'targetAudiences',
+    formState: { errors, isValid },
+  } = form;
+
+  const { fields, append, remove } = useFieldArray({
+    control: control,
+    name: 'targetAudiences' as FieldArrayPath<Step1FormData>,
   });
 
   const formData = watch();
@@ -100,9 +101,7 @@ const Stepper1 = () => {
     }
   };
 
-  // Submit
   const onSubmit = (data: Step1FormData) => {
-    // Filter out empty strings
     const filteredData = {
       ...data,
       targetAudiences: data.targetAudiences.filter(
@@ -156,7 +155,6 @@ const Stepper1 = () => {
           </Button>
         </div>
 
-        {/* Business Name */}
         <div className="mt-6 flex flex-col gap-2">
           <Label className="text-gray-400">Business Name *</Label>
           <Input
