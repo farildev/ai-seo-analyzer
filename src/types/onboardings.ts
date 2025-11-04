@@ -7,15 +7,18 @@ export interface Step1Data {
 }
 
 export interface Step2Data {
-  mainKeywords: string[];
-  targetRegion: string;
-  language: string;
+  competitors: string[];
 }
 
 export interface Step3Data {
-  contentGoals: string[];
-  monthlyBudget: number;
-  contentFrequency: string;
+  sitemapUrl: string;
+  rootBlogUrl: string;
+  articleExamples: string[];
+  googleSearchConsole?: {
+    isConnected: boolean;
+    accountEmail?: string;
+    propertyUrl?: string;
+  };
 }
 
 export interface Step4Data {
@@ -23,7 +26,8 @@ export interface Step4Data {
   contentLanguage: string;
   articleTone: string;
   autoPublish: boolean;
-  businessDescription: string;
+  brandColor : string;
+  globalArticleConfiguration: string;
   articleImageStyle: string;
   addYoutubeVideo: boolean;
   addCTA: boolean;
@@ -32,8 +36,8 @@ export interface Step4Data {
 }
 
 export interface Step5Data {
-  selectedTemplate: string;
-  customization: Record<string, unknown>;
+  keywordRegion: string;
+  automaticKeywordGeneration: boolean;
 }
 
 export interface Step6Data {
