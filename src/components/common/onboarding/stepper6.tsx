@@ -10,7 +10,6 @@ import { useRouter } from 'next/navigation';
 
 const Stepper6 = () => {
   const router = useRouter();
-  const canGoNext = useOnboardingStore((state) => state.canGoNext);
   const prevStep = useOnboardingStore((state) => state.prevStep);
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-5">
@@ -40,7 +39,6 @@ const Stepper6 = () => {
         </div>
         <div className="flex items-center gap-2">
           <Button
-            disabled={!canGoNext}
             onClick={prevStep}
             className="flex items-center gap-1 bg-gray-100 hover:bg-gray-200 border border-custom-border text-black font-semibold h-12 mt-5 flex-1"
           >

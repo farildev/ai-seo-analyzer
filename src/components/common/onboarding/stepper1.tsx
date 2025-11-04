@@ -118,13 +118,11 @@ const Stepper1 = () => {
       onSubmit={handleSubmit(onSubmit)}
       className="grid lg:grid-cols-2 grid-cols-1 gap-5 h-full py-10"
     >
-      {/* Left Side - Form */}
       <div className="">
         <h2 className="lg:text-4xl md:text-3xl text-2xl font-semibold">
           Step 1 - Add information about your business
         </h2>
 
-        {/* Website URL + Auto Fill */}
         <div className="mt-10 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <Label className="text-gray-400">Business Website *</Label>
@@ -177,7 +175,7 @@ const Stepper1 = () => {
           <Label className="text-gray-400">Business description *</Label>
           <Textarea
             {...register('businessDescription')}
-            className="h-48 md:text-md text-sm"
+            className="h-48 resize-none shadow-none md:text-md text-sm"
             placeholder="SEO & Digital Marketing"
           />
           {errors.businessDescription && (
