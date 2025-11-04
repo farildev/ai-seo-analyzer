@@ -3,29 +3,30 @@ import RealisticStyle from '@/assets/images/article-images/realistic-style.png';
 import CinematicRealism from '@/assets/images/article-images/cinematic-realism.png';
 import IllustrationStyle from '@/assets/images/article-images/illustration.png';
 import SketchStyle from '@/assets/images/article-images/sketch.png';
+
 export const articleImageStyles = [
   {
-    id: 1,
+    id: 'water-color-realism',
     name: 'Water Color Realism',
     image_url: WaterColorRealism,
   },
   {
-    id: 2,
+    id: 'cinematic-realism',
     name: 'Cinematic Realism',
     image_url: CinematicRealism,
   },
   {
-    id: 3,
+    id: 'realistic-style',
     name: 'Realistic Style',
     image_url: RealisticStyle,
   },
   {
-    id: 4,
+    id: 'illustration',
     name: 'Illustration',
     image_url: IllustrationStyle,
   },
   {
-    id: 5,
+    id: 'sketch',
     name: 'Sketch',
     image_url: SketchStyle,
   },
