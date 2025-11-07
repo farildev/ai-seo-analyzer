@@ -69,7 +69,7 @@ const DashboardSidebar = () => {
                   'flex items-center py-2 px-3 rounded-md gap-2',
                   isActive
                     ? 'bg-main text-white font-medium'
-                    : 'text-black font-normal',
+                    : 'text-gray-500 font-normal',
                 )}
                 href={item.href}
               >
