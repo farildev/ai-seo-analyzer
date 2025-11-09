@@ -4,7 +4,6 @@ import {
   ArrowLeftRight,
   CreditCard,
   Earth,
-  Link,
   Link2,
   Plus,
   Scan,
@@ -28,7 +27,7 @@ const BacklinkExchange = () => {
           Your Domain Rating : 12
         </div>
       </div>
-      <div className="mt-10 grid lg:grid-cols-2 gap-6">
+      <div className="mt-10 grid xl:grid-cols-2 gap-6">
         <div className="p-6 rounded-lg border border-custom-border">
           <div className="flex items-center gap-3 font-semibold text-2xl">
             <CreditCard size={32} />
