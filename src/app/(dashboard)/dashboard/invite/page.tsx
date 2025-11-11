@@ -15,7 +15,7 @@ const Invite = () => {
           consequatur vel maiores tenetur doloremque voluptate odit asperiores.
         </p>
       </div>
-      <div className="flex flex-col gap-2 w-1/2 mt-5">
+      <div className="flex flex-col gap-2 md:w-1/2 w-full mt-5">
         <Label className="text-gray-400">Invite User</Label>
         <div className="flex items-center gap-2">
           <Input className="h-12" placeholder="Email address" />
