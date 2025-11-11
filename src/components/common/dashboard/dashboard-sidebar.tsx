@@ -1,86 +1,98 @@
 'use client';
-
 import {
-  ArrowLeftRight,
-  Blocks,
+  ArrowRightLeft,
   Calendar,
   History,
+  LayoutPanelTop,
   Link2,
   Settings,
 } from 'lucide-react';
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from '@/components/ui/sidebar';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 
-const DashboardSidebar = () => {
+const items = [
+  {
+    title: 'Content Planner',
+    url: '/dashboard',
+    icon: Calendar,
+  },
+  {
+    title: 'Linking Configuration',
+    url: '/dashboard/linking-configuration',
+    icon: Link2,
+  },
+  {
+    title: 'Backlink Exchange',
+    url: '/dashboard/backlink-exchange',
+    icon: ArrowRightLeft,
+  },
+  {
+    title: 'Platform Integration',
+    url: '/dashboard/platform-integration',
+    icon: LayoutPanelTop,
+  },
+  {
+    title: 'Content History',
+    url: '/dashboard/content-history',
+    icon: History,
+  },
+  {
+    title: 'Settings',
+    url: '/dashboard/settings',
+    icon: Settings,
+  },
+];
+
+export default function DashboardSidebar() {
   const pathname = usePathname();
 
-  const sidebarLinks = [
-    {
-      id: 'daily-contents',
-      label: 'Daily Contents',
-      href: '/dashboard',
-      icon: <Calendar size={20} />,
-    },
-    {
-      id: 'linking-configuration',
-      label: 'Linking Configuration',
-      href: '/dashboard/linking-configuration',
-      icon: <Link2 size={20} />,
-    },
-    {
-      id: 'backlink-exchange',
-      label: 'Backlink Exchange',
-      href: '/dashboard/backlink-exchange',
-      icon: <ArrowLeftRight size={20} />,
-    },
-    {
-      id: 'platform-integration',
-      label: 'Platform Integration',
-      href: '/dashboard/platform-integration',
-      icon: <Blocks size={20} />,
-    },
-    {
-      id: 'content-history',
-      label: 'Content History',
-      href: '/dashboard/content-history',
-      icon: <History size={20} />,
-    },
-    {
-      id: 'settings',
-      label: 'Settings',
-      href: '/dashboard/settings',
-      icon: <Settings size={20} />,
-    },
-  ];
-
   return (
-    <aside className="h-full w-[320px] border-r border-custom-border shrink-0 py-5 px-3">
-      <div className="flex flex-col">
-        <div className="text-2xl text-main font-semibold">Analyzer</div>
-        <nav className="flex flex-col gap-5 mt-10">
-          {sidebarLinks.map((item) => {
-            const isActive = pathname === item.href;
+    <Sidebar>
+      <SidebarHeader>
+        <h3 className="text-2xl font-bold text-main p-2">SEO Capitalist</h3>
+      </SidebarHeader>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu className="flex flex-col gap-3">
+              {items.map((item) => {
+                const isActive = pathname === item.url;
 
-            return (
-              <Link
-                key={item.id}
-                className={clsx(
-                  'flex items-center py-2 px-3 rounded-md gap-2',
-                  isActive
-                    ? 'bg-main text-white font-medium'
-                    : 'text-gray-500 font-normal',
-                )}
-                href={item.href}
-              >
-                {item.icon} {item.label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-    </aside>
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild className="hover:bg-gray-100">
+                      <Link
+                        href={item.url}
+                        className={clsx(
+                          isActive &&
+                            'bg-main text-white hover:bg-main-hover hover:text-white',
+                        )}
+                      >
+                        <item.icon size={28} />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </Sidebar>
   );
-};
-
-export default DashboardSidebar;
+}
