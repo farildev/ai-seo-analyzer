@@ -2,10 +2,15 @@
 import {
   ArrowRightLeft,
   Calendar,
+  ChevronDown,
   History,
   LayoutPanelTop,
   Link2,
   Settings,
+  BookOpen,
+  FileText,
+  HelpCircle,
+  Crown,
 } from 'lucide-react';
 
 import {
@@ -22,6 +27,11 @@ import {
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
 
 const items = [
   {
@@ -56,6 +66,32 @@ const items = [
   },
 ];
 
+const helpItems = [
+  {
+    title: 'Invite Friends',
+    url: '/dashboard/invite',
+    icon: BookOpen,
+  },
+  {
+    title: 'Invoices',
+    url: '/dashboard/invoices',
+    icon: FileText,
+  },
+];
+
+const premiumItems = [
+  {
+    title: 'Human Curated Services',
+    url: '/dashboard/human-curated-services',
+    icon: Crown,
+  },
+  {
+    title: 'Directory Submission',
+    url: '/dashboard/directory-submission',
+    icon: Link2,
+  },
+];
+
 export default function DashboardSidebar() {
   const pathname = usePathname();
 
@@ -70,6 +106,71 @@ export default function DashboardSidebar() {
           <SidebarGroupContent>
             <SidebarMenu className="flex flex-col gap-3">
               {items.map((item) => {
+                const isActive = pathname === item.url;
+
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild className="hover:bg-gray-100">
+                      <Link
+                        href={item.url}
+                        className={clsx(
+                          isActive &&
+                            'bg-main text-white hover:bg-main-hover hover:text-white',
+                        )}
+                      >
+                        <item.icon size={28} />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
+
+              {/* Help Collapsible */}
+              <SidebarMenuItem>
+                <Collapsible defaultOpen className="group/collapsible w-full">
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton className="hover:bg-gray-100 w-full">
+                      <HelpCircle size={28} />
+                      <span>Help</span>
+                      <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenu className="flex flex-col gap-2 mt-2">
+                      {helpItems.map((item) => {
+                        const isActive = pathname === item.url;
+
+                        return (
+                          <SidebarMenuItem key={item.title}>
+                            <SidebarMenuButton
+                              asChild
+                              className="hover:bg-gray-100 pl-8"
+                            >
+                              <Link
+                                href={item.url}
+                                className={clsx(
+                                  isActive &&
+                                    'bg-main text-white hover:bg-main-hover hover:text-white',
+                                )}
+                              >
+                                <item.icon size={20} />
+                                <span className="text-sm">{item.title}</span>
+                              </Link>
+                            </SidebarMenuButton>
+                          </SidebarMenuItem>
+                        );
+                      })}
+                    </SidebarMenu>
+                  </CollapsibleContent>
+                </Collapsible>
+              </SidebarMenuItem>
+            </SidebarMenu>
+            <SidebarGroupLabel className="mt-2">
+              Premium Services
+            </SidebarGroupLabel>
+            <SidebarMenu>
+              {premiumItems.map((item) => {
                 const isActive = pathname === item.url;
 
                 return (
