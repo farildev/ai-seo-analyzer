@@ -8,6 +8,7 @@ import {
   Plus,
   Scan,
 } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 const BacklinkExchange = () => {
@@ -46,10 +47,12 @@ const BacklinkExchange = () => {
               Get up 1000 credits per month{' '}
             </span>
           </div>
-          <Button className="bg-main text-white font-medium h-12 w-full hover:bg-main-hover mt-7">
-            <Plus size={24} />
-            Get Credits
-          </Button>
+          <Link href={'/dashboard/backlink-exchange/backlink-credits'}>
+            <Button className="bg-main text-white font-medium h-12 w-full hover:bg-main-hover mt-7">
+              <Plus size={24} />
+              Get Credits
+            </Button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 gap-6">
           <div className="p-6 rounded-lg border border-custom-border">
