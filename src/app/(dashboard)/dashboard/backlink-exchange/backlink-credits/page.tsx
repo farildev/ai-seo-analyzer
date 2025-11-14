@@ -1,4 +1,5 @@
 import PriceCard from '@/components/price-card';
+import { humanCuratedService } from '@/mocks/services';
 import React from 'react';
 
 const BacklinkCredits = () => {
@@ -13,8 +14,8 @@ const BacklinkCredits = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-5 mt-5">
-        <PriceCard />
-        <PriceCard />
+        <PriceCard data={humanCuratedService} />
+        <PriceCard data={humanCuratedService} />
       </div>
     </div>
   );
