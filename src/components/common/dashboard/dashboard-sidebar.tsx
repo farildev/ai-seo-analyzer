@@ -7,10 +7,10 @@ import {
   LayoutPanelTop,
   Link2,
   Settings,
-  BookOpen,
   FileText,
   HelpCircle,
   Crown,
+  UserPlus,
 } from 'lucide-react';
 
 import {
@@ -51,7 +51,7 @@ const items = [
   },
   {
     title: 'Platform Integration',
-    url: '/dashboard/platform-integration',
+    url: '/dashboard/integrations',
     icon: LayoutPanelTop,
   },
   {
@@ -70,7 +70,7 @@ const helpItems = [
   {
     title: 'Invite Friends',
     url: '/dashboard/invite',
-    icon: BookOpen,
+    icon: UserPlus,
   },
   {
     title: 'Invoices',
